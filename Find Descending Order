@@ -1,0 +1,27 @@
+#include<stdio.h>
+#define MAX 100
+int main()
+{
+    int data[MAX];
+    int i = 0, j = 0, temp = 0, size = 0;
+
+    printf("Enter the Element Size");
+    scanf("%d",&size);
+    printf("Enter the Data \n");
+    for(i = 0; i < size; i++) {
+        scanf("%d",&data[i]);
+    }
+    for(i = 0; i < size; i++) {
+        for(j =i+1; j < size; j++) {    
+            if(data[i] < data[j]) {
+            temp = data[i];
+            data[i] = data[j];
+            data[j] = temp;
+        }   }
+    }
+    printf("\n");   
+    for(i = 0; i < size; i++) {
+        printf("%d\n",data[i]);
+    }
+    return 0;
+}
