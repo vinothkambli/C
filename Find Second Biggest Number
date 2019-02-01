@@ -1,0 +1,25 @@
+#include<stdio.h>
+#define MAX 100
+
+int main()
+{
+    int data[MAX]={0};
+    int size = 0, i = 0, Max1 = -1, Max2 = -1; 
+
+    printf("Enter the Element Size");
+    scanf("%d",&size);
+    printf("Enter the Date");
+    for(i = 0; i < size; i++) {
+        scanf("%d",&data[i]);
+    }
+    for(i = 0; i < size; i++) {
+        if(data[i] > Max1) { 
+            Max2 = Max1;
+            Max1 = data[i];
+        }
+        else if(data[i] > Max2 && data[i] < Max1) 
+            Max2 = data[i];
+    }
+    printf("Second Biggest Number :%d",Max2);
+    return 0;
+}
